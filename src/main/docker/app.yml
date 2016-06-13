@@ -1,0 +1,22 @@
+version: '2'
+services:
+    jhipwithmysql-app:
+        image: jhipwithmysql
+        external_links:
+            - jhipwithmysql-mysql:mysql
+            - jhipwithmysql-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/jhipwithmysql?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    jhipwithmysql-mysql:
+        extends:
+            file: mysql.yml
+            service: jhipwithmysql-mysql
+    jhipwithmysql-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: jhipwithmysql-elasticsearch
