@@ -1,8 +1,8 @@
 {
-    "name": "Delibird API Server",
-    "description": "Shipment tracking api server",
-    "repository": "https://github.com/purpleworks/delibird",
-    "keywords": ["go", "shipment", "tracking", "courier"],
+    "name": "jhipster test",
+    "description": "jhipster + mysql",
+    "repository": "https://github.com/tlstls40/jhipwithmysql",
+    "keywords": [],
     "env": {
         "ENVIRONMENT": {
             "description": "server environment (development or production)",
